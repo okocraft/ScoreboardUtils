@@ -1,2 +1,2 @@
 # ScoreboardUtils
-ScoreboardUtils, to add some convenient command about scoreboard.
+ScoreboardUtils, to add some convenient commands about scoreboard.
