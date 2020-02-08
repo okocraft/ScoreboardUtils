@@ -1,0 +1,17 @@
+plugin:
+  prefix: "&8[&6ScoreboardUtils&8]&r"
+
+command:
+  general:
+    error:
+      not-enough-arguments: "&c引数が足りません。"
+      invalid-argument: "&c%argument% という引数は存在しません。"
+      no-permission: "&c権限がありません"
+      invalid-number: "&c不正な数字が入力されました。"
+  ranking:
+    description: "&7スコアボードのランキングを表示します。"
+    info:
+      header: "&b%scoreboard% &7ランキング (&b%page% &7/ &b%max-page%&7)"
+      format: "&b%rank%&7位: &b%entry% &7- &b%score%"
+    error:
+      objective-does-not-exist: "&cその名前のスコアボードは見つかりませんでした。"
