@@ -15,7 +15,9 @@ public class ScoreboardUtils extends JavaPlugin {
 	public void onEnable() {
 		Messages.getInstance().reload();
 		new ScoreboardUtilsCommand();
-		RenameListener.start();
+		if (Bukkit.getPluginManager().isPluginEnabled("AltManager")) {
+			RenameListener.start();
+		}
 	}
 
 	@Override

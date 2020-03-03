@@ -2,7 +2,9 @@ name: ${project.artifactId}
 version: ${project.version}
 main: ${project.groupId}.${project.artifactId}
 author: LazyGon
+softdepend: ["AltManager"]
 api-version: '1.14'
+
 commands:
   scoreboardutils:
     description: "Main command of this plugin."
