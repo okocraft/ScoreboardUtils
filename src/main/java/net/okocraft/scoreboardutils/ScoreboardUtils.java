@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import net.okocraft.scoreboardutils.command.ScoreboardUtilsCommand;
 import net.okocraft.scoreboardutils.config.Messages;
+import net.okocraft.scoreboardutils.listener.RenameListener;
 
 public class ScoreboardUtils extends JavaPlugin {
 
@@ -14,6 +15,7 @@ public class ScoreboardUtils extends JavaPlugin {
 	public void onEnable() {
 		Messages.getInstance().reload();
 		new ScoreboardUtilsCommand();
+		RenameListener.start();
 	}
 
 	@Override

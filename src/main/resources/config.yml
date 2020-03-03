@@ -1,0 +1,3 @@
+score-migration:
+  enable: true
+  reset-oldname-score: true
