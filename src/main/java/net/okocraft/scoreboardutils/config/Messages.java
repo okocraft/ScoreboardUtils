@@ -5,16 +5,12 @@ import java.util.Map;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-import net.okocraft.configurationapi.BaseConfig;
-import net.okocraft.scoreboardutils.ScoreboardUtils;
-
 public final class Messages extends BaseConfig {
 
-    private static ScoreboardUtils plugin = ScoreboardUtils.getInstance();
     private static Messages instance = new Messages();
 
     public Messages() {
-        super("messages.yml", plugin.getDataFolder(), plugin.getResource("messages.yml"));
+        super("messages.yml");
     }
 
     public static Messages getInstance() {
@@ -32,7 +28,7 @@ public final class Messages extends BaseConfig {
     private void sendMessage(final CommandSender sender, final boolean addPrefix, final String path,
             final Map<String, Object> placeholders) {
         final String prefix = addPrefix
-                ? getConfig().getString("plugin.prefix", "&8[&6ScoreboardUtils&8]&r") + " "
+                ? get().getString("plugin.prefix", "&8[&6ScoreboardUtils&8]&r") + " "
                 : "";
         String message = ChatColor.translateAlternateColorCodes('&', prefix + getMessage(path));
         for (final Map.Entry<String, Object> placeholder : placeholders.entrySet()) {
@@ -94,10 +90,10 @@ public final class Messages extends BaseConfig {
     }
 
     public String getMessage(final String path) {
-        return getConfig().getString(path, path);
+        return get().getString(path, path);
     }
 
     public void reload() {
-        reloadConfig();
+        super.reload();
     }
 }

@@ -38,7 +38,7 @@ class Ranking extends BaseSubCommand {
 			if (page < 1) {
 				throw new NumberFormatException("The page must be more than 1");
 			}
-		} catch (NumberFormatException ignore) {
+		} catch (ArrayIndexOutOfBoundsException | NumberFormatException ignore) {
 		}
 
 		List<Score> entries = mainScoreboard.getEntries().stream().parallel()
