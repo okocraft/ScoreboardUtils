@@ -53,7 +53,7 @@ class Ranking extends BaseSubCommand {
 
 		messages.rankingHeader(sender, objective.getName(), page, maxPage);
 
-		for (int i = (page - 1) * 9; i < page * 9; i++) {
+		for (int i = (page - 1) * 9; i < page * 9 && i < entries.size(); i++) {
 			messages.rankingFormat(sender, i + 1, entries.get(i).getEntry(), entries.get(i).getScore());
 		}
 		return true;
